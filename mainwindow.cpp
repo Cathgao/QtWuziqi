@@ -100,7 +100,8 @@ void MainWindow::paintEvent(QPaintEvent *event)
 {
     kBlockSize = (height()) / kBoardSizeNum;
     QPainter painter(this);
-    painter.translate((kBlockSize * kBoardSizeNum) /2,kBlockSize/2); // 移动到中心
+    painter.translate((width() - (kBlockSize * kBoardSizeNum)) /2,kBlockSize/2); // 移动到中心
+//    painter.translate(0,0); // 移动到中心
     // 绘制棋盘
     painter.setRenderHint(QPainter::Antialiasing, true); // 抗锯齿
 //    QPen pen; // 调整线条宽度
@@ -193,7 +194,7 @@ void MainWindow::paintEvent(QPaintEvent *event)
 void MainWindow::mouseMoveEvent(QMouseEvent *event)
 {   
     // 通过鼠标的hover确定落子的标记
-    int x = event->x() - (kBlockSize * kBoardSizeNum) /2;
+    int x = event->x() - (width() - (kBlockSize * kBoardSizeNum)) /2;
     int y = event->y() - (kBlockSize/2);
 
     // 棋盘边缘不能落子
