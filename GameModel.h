@@ -1,4 +1,4 @@
-#ifndef GAMEMODEL_H
+﻿#ifndef GAMEMODEL_H
 #define GAMEMODEL_H
 
 // ---- 五子棋游戏模型类 ---- //
@@ -20,7 +20,7 @@ enum GameStatus
 };
 
 // 棋盘尺寸
-const int kBoardSizeNum = 15;
+const int kBoardSizeNum = 23;
 
 class GameModel
 {
